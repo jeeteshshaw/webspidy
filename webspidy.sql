@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 06, 2020 at 07:03 AM
+-- Generation Time: Jul 06, 2020 at 08:11 PM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.7
 
@@ -56,7 +56,10 @@ CREATE TABLE `feedback` (
 --
 
 INSERT INTO `feedback` (`ID`, `NAME`, `CONTACT`, `TEXT`, `DOS`) VALUES
-(1, 'jeet', '0', 'Hello', '2020-07-03 00:00:00');
+(1, 'jeet', '0', 'Hello', '2020-07-03 00:00:00'),
+(2, 'SK', 'undefined', 'Testing', '2020-07-06 00:00:00'),
+(3, 'SK2', 'Sk@gmail.com', 'Testing2', '2020-07-06 00:00:00'),
+(4, 'SK2', 'Sk@gmail.com', 'Testing2', '2020-07-06 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -67,8 +70,8 @@ INSERT INTO `feedback` (`ID`, `NAME`, `CONTACT`, `TEXT`, `DOS`) VALUES
 CREATE TABLE `project_list` (
   `ID` int(11) NOT NULL,
   `NAME` varchar(150) NOT NULL,
-  `EMAIL` varchar(255) NOT NULL,
-  `PHONE` varchar(13) NOT NULL,
+  `CONTACT` varchar(255) NOT NULL,
+  `BUDGET` varchar(13) NOT NULL,
   `TYPE` varchar(100) NOT NULL,
   `CATEGORY` varchar(100) NOT NULL,
   `MESSAGE` varchar(255) NOT NULL,
@@ -112,7 +115,7 @@ ALTER TABLE `contact`
 -- AUTO_INCREMENT for table `feedback`
 --
 ALTER TABLE `feedback`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `project_list`
