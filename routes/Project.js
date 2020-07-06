@@ -23,11 +23,12 @@ const storage = {
 route.post('/', multer(storage).single('file'), async (req, res, next) => {
     const file  = req.file;
     if(!file){
-        file = "";
-    }
+    const filename = "";
+    }else
+    const filename = file.filename;
     
     let Today = format.asString('yyyy-MM-dd', new Date());
-    let sql = `INSERT INTO project_list (NAME, CONTACT, BUDGET, TYPE, CATEGORY, MESSAGE, PROJECT_FILE, DOS ) VALUES('${req.body.name}', '${req.body.contact}', '${req.body.budget}', '${req.body.type}', '${req.body.category}', '${req.body.message}', '${file.filename}', '${Today}')`;
+    let sql = `INSERT INTO project_list (NAME, CONTACT, BUDGET, TYPE, CATEGORY, MESSAGE, PROJECT_FILE, DOS ) VALUES('${req.body.name}', '${req.body.contact}', '${req.body.budget}', '${req.body.type}', '${req.body.category}', '${req.body.message}', '${filename}', '${Today}')`;
     try {
         await con.query(sql, (err, result) => {
             if (err) return res.status(400).send({error: err, msg: "Failed to Upload Please try again or Try few hours Later"})
